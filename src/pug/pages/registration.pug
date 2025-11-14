@@ -1,0 +1,65 @@
+extends ../layouts/without-menu
+include ../mixins/title
+include ../mixins/input
+include ../mixins/button
+
+
+block title 
+  | Регистрация
+block content
+  .registration
+    .container
+      +title({ title: 'Регистрация', tag: 'h2', size: 'lg' })
+
+    .registration__wrap
+      .container
+        form
+          .input-wrapper
+            +input({
+              label: "ФИО",
+              placeholder: "Введите полное имя",
+              id: "name",
+              error: "Ошибка"
+            })
+            
+            +input({
+              label: "Телефон",
+              placeholder: "Введите номер телефона",
+              id: "phone",
+              success: "Успешно"
+            })
+            
+            +input({
+              label: "Почта",
+              placeholder: "Введите email",
+              id: "email" 
+            })
+
+            +input({
+              label: "Город/село",
+              placeholder: "Введите адрес",
+              id: "city" 
+            })
+
+            +input({
+              label: "Образование",
+              placeholder: "Введите ваше образование",
+              id: "education" 
+            })
+            +input({
+              label: "Прикрепите чек оплаты",
+              placeholder: "Введите ваше образование",
+              id: "payment-receipt" ,
+              file: true
+            })
+
+            +input({
+              label: "Реферальная ссылка",
+              placeholder: "Введите реферальную ссылку",
+              id: "referral-link"
+            })
+
+            +btn({
+              label: 'Зарегистрироваться',
+              className: 'secondary'
+            })

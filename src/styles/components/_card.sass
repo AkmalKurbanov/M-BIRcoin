@@ -1,0 +1,94 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.card
+  width: rem(110)
+  text-align: center
+  &__img
+    // margin: 0 auto
+    position: relative
+    width: rem(110)
+    height: rem(144)
+    overflow: hidden
+    clip-path: polygon(
+        6px 0,  
+        calc(100% - 6px) 0, 
+        100% 6px,
+        100% calc(100% - 6px),
+        calc(100% - 6px) 100%, 
+        6px 100%,  
+        0 calc(100% - 6px),
+        0 6px
+      )
+    span
+      position: absolute
+      width: calc( 100% - 2px )
+      height: calc( 100% - 2px )
+      background-color: #fff   
+      top: 1px
+      right: 1px
+      bottom: 1px
+      left: 1px 
+      
+
+    picture,
+    img
+      position: absolute
+      object-fit: cover
+      object-position: center
+      width: 100%
+      height: 100%
+      
+    &::before
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      background: #fff
+      z-index: -1
+
+  &__label
+    font-size: rem(12)
+    line-height: rem(18)
+    font-weight: 700
+    margin-top: rem(4)
+    color: #fff
+    
+
+
+
+.card-content
+  display: flex
+  flex-direction: column
+  gap: rem(8)
+  padding: rem(12)
+  position: relative
+  
+  &__icon
+    width: rem(40)
+    height: rem(40)
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $secondary
+    border-radius: 50%
+    color: #fff
+    z-index: 1
+
+    img
+      width: rem(16)
+
+  &__label
+    font-size: rem(14)
+    line-height: rem(16)
+    font-weight: 700
+    color: #fff
+    z-index: 1
+
+  &__count
+    color: $primary
+    font-size: rem(18)
+    font-weight: 700
+    z-index: 1

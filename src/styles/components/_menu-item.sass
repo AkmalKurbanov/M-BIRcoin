@@ -1,0 +1,26 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.menu-item
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  color: $primary
+  text-decoration: none
+  gap: rem(6)
+  transition: $transition
+
+  &:hover
+    color: #fff
+
+  &__label
+    font-size: rem(12)
+    font-weight: 500
+    line-height: rem(12)
+    
+.is-active
+  .menu-item
+    color: #fff
+    pointer-events: none

@@ -1,0 +1,38 @@
+mixin notification({img, date, label, desc})
+  .card-item.glass-effect
+    .card-item__content
+      .card-item__img 
+        picture
+          source(
+            type="image/avif"
+            srcset=`./images/notification/notification-338.avif 338w,
+                    ./images/notification/notification-676.avif 676w,
+                    ./images/notification/notification-1014.avif 1014w`
+            sizes="338px"
+          )
+          source(
+            type="image/webp"
+            srcset=`./images/notification/notification-338.webp 338w,
+                    ./images/notification/notification-676.webp 676w,
+                    ./images/notification/notification-1014.webp 1014w`
+            sizes="338px"
+          )
+          img(
+            src="./images/notification/notification-676.jpg"
+            srcset=`./images/notification/notification-338.jpg 338w,
+                    ./images/notification/notification-676.jpg 676w,
+                    ./images/notification/notification-1014.jpg 1014w`
+            sizes="338px"
+            width="338"
+            height="auto"
+            alt="notification"
+          )
+
+
+      .card-item__info
+        .card-item__date=date
+        +title({ title: label, tag: 'h3', size: 'md' })
+
+        .card-item__desc
+          p=desc
+

@@ -1,0 +1,33 @@
+extends ../layouts/base
+include ../mixins/link-logo
+
+block title
+  | Социальные сети
+block content
+  .contacts
+    .container
+      .contacts__section.glass-effect
+        +title({ title: 'Контакты', tag: 'h2', size: 'md' })
+        each item in contacts
+          .contacts__item
+            +linkLogo({
+              icon: item.icon, 
+              label: item.label, 
+              link: item.link, 
+              email: item.email, 
+              phone: item.phone,
+              whatsapp: item.whatsapp,
+              })
+
+      .contacts__section.glass-effect
+        +title({ title: 'Социальные сети', tag: 'h2', size: 'md' })
+        each item in social
+          .contacts__item
+            +linkLogo({
+              icon: item.icon, 
+              label: item.label, 
+              link: item.link, 
+              email: item.email, 
+              phone: item.phone,
+              whatsapp: item.whatsapp,
+              })

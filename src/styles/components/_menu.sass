@@ -1,0 +1,21 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.menu
+  position: fixed
+  width: 100%
+  bottom: 0
+  border-top: 1px solid #0D3032
+  padding: rem(12) rem(16)
+  background: linear-gradient(180deg, #002527 0%, #000000 100%)
+  z-index: 1
+  
+  &__container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+  ul
+    li
+      list-style: none  
+  

@@ -1,0 +1,17 @@
+include ../mixins/notification
+
+.popup.notification.called-js(data-name="notification")
+  .glass-effect
+    .popup__window
+      +title({ title: 'Уведомления', tag: 'h2', size: 'md' })
+      .popup__close.close-js.tap-effect
+        +icon('cross', {class: 'icon', width: 26, height: 26})
+
+      each item in notification
+        .notification__item 
+          +notification({
+            img: item.img,
+            date: item.date,
+            label: item.label,
+            desc: item.desc,
+          })

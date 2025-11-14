@@ -1,0 +1,15 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/rem'  as *
+
+.slider
+  width: calc( 100% + rem(32) )
+  margin-left: rem(-16)
+  
+  .swiper 
+    padding-right: rem(32)
+
+  .swiper-wrapper
+    padding-left: rem(16)
+
+  .swiper-slide
+    width: auto !important

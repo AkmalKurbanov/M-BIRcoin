@@ -1,0 +1,10 @@
+mixin title({ title, size, tag = 'h2' })
+  if size
+    #{tag}(class=`title title--${size}`)= title
+  else
+    #{tag}(class='title')= title
+
+
+//- +title({ title: 'Главная' })
+//- +title({ title: 'Контакты', size: 'sm' })
+//- +title({ title: 'Отзывы', tag: 'h3', size: 'xl' })

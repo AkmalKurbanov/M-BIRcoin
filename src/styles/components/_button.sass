@@ -1,0 +1,47 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.btn
+  outline: none
+  border: none
+  border-radius: $radius
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: rem(8)
+  color: #fff
+  font-size: rem(18)
+  font-weight: 700
+  text-align: center
+  height: rem(48)
+  padding: rem(5) rem(12)
+  width: 100%
+  position: relative
+  transition: $transition
+
+  span
+    z-index: 1
+    position: relative
+
+  &--primary
+    background-color: rgba(#003437, .6)
+    color: $primary
+
+  &--secondary
+    background-color: rgba(#00656B, .6)
+
+  &--success
+    background-color: rgba($green, .6)
+
+  &--error
+    background-color: rgba($red, .6)
+
+  &--warning
+    background-color: rgba($primary, .6)
+
+  &[disabled],
+  &[aria-disabled="true"]
+    background-color: #8C8C8C
+    pointer-events: none
+    cursor: not-allowed

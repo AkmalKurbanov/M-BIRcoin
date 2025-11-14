@@ -1,0 +1,6 @@
+mixin cardContent({label,count})
+  .card-content.glass-effect 
+    .card-content__icon
+      +icon('doc', {class: 'icon ', width: 24, height: 24})
+    .card-content__label=label 
+    .card-content__count=count

@@ -1,0 +1,14 @@
+mixin btn({label, link, className, icon, state})
+  if(link)
+    a.btn.glass-effect.tap-effect(href=link class=className && `btn--${className}`  aria-disabled=state === 'disabled' ? 'true' : false
+      tabindex=state === 'disabled' ? '-1' : false)
+      if(icon)
+        +icon(icon, {class: 'icon', width: 24, height: 24})
+      else  
+      span=label
+  else
+    button.btn.glass-effect.tap-effect(class=className && `btn--${className}` disabled=state === 'disabled')
+      if(icon)
+        +icon(icon, {class: 'icon', width: 24, height: 24})
+      else  
+      span=label

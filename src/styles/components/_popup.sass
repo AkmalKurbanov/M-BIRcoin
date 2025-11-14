@@ -1,0 +1,64 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.popup
+  position: fixed
+  inset: 0
+  z-index: 2
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  background-color: rgba(0,0,0, .7)
+  padding: rem(65) rem(16) 0 rem(16)
+  height: 100vh
+  transition: $transition
+  opacity: 0
+  pointer-events: none
+
+  .glass-effect
+    position: relative
+    transform: scale(0.9)
+    transition: $transition
+
+  &__window
+    padding: rem(20) rem(16)
+    height: calc( 100vh - rem(150) )
+    position: relative
+    backdrop-filter: blur(2px)
+    border-radius: rem(16)
+    overflow-y: scroll
+    width: rem(370)
+
+  &__close
+    width: rem(32)
+    height: rem(32)
+    border-radius: rem(8)
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    background: rgba(255, 255, 255, 0.1)
+    position: absolute
+    top: rem(16)
+    right: rem(16)
+
+  &.show
+    opacity: 1
+    pointer-events: inherit
+    .glass-effect
+      transform: none
+
+  &--dark-bg
+    input
+      border: rem(1) solid #D9D9D9
+      border-radius: rem(14)
+      height: rem(40)
+      width: 100%
+      background-color: transparent
+      color: #fff
+      padding: 0 rem(12)
+
+      &::placeholder
+        color: #fff
+      &:active  
+        

@@ -1,0 +1,11 @@
+mixin check({label, link,})
+  a.check-item.glass-effect(data-src=link data-fancybox="receipt")  
+    .check-item__content
+      .check-item__column 
+        .check-item__icon 
+          +icon('doc', {class: 'icon ', width: 20, height: 20})
+      .check-item__column 
+        .check-item__label=label
+        .check-item__info
+          span 15:01 
+          span 28.10.2025

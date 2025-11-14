@@ -1,0 +1,7 @@
+mixin Picture(name, alt, widths=[320,640,960,1280,1440,1920,2560])
+  - const avif = widths.map(w => `/images/${name}-${w}.avif ${w}w`).join(', ')
+  - const webp = widths.map(w => `/images/${name}-${w}.webp ${w}w`).join(', ')
+  picture
+    source(type="image/avif" srcset=avif)
+    source(type="image/webp" srcset=webp)
+    img(src=`/images/${name}-960.webp`, alt=alt, loading="lazy", decoding="async", width="960")

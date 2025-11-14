@@ -1,0 +1,18 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+.title
+  color: $primary
+  font-weight: 700
+  line-height: rem(24)
+  margin-bottom: rem(16)
+  
+  &--lg
+    font-size: rem(24)
+
+  &--md
+    font-size: rem(20)
+
+  &--xs
+    font-size: rem(16)
+    font-weight: 400
+    line-height: rem(24)

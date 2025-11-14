@@ -1,0 +1,37 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.check-item
+  padding: rem(8) rem(16)
+  position: relative
+  display: block
+  text-decoration: none
+
+  &__content
+    position: relative
+    z-index: 1
+    display: flex
+    gap: rem(8)
+
+  &__icon
+    max-width: rem(40)
+    min-width: rem(40)
+    height: rem(40)
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $secondary
+    border-radius: 50%
+    color: #fff
+
+  &__label
+    color: #fff
+    font-size: rem(16)
+    line-height: rem(20)
+    font-weight: 500
+    margin-bottom: rem(2)
+
+  &__info
+    font-size: rem(14)
+    line-height: rem(18)
+    color: #8c8c8c  

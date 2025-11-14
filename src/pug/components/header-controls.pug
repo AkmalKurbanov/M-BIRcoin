@@ -1,0 +1,17 @@
+header.header
+  .container
+    .header__flex-wrap
+      include ../components/logo
+
+      .header__controls 
+        .header__controls-item
+          a(href="https://t.me/Dzhumalan" target="_blank") 
+            +icon('support', {class: 'icon ', width: 32, height: 32})
+
+        .header__controls-item.trigger-js(data-name="notification")
+          +icon('ring', {class: 'icon ', width: 32, height: 32})
+          .header__item-count 2
+
+          include ../components/notifications
+
+

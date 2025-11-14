@@ -1,0 +1,36 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.link-logo
+  display: flex
+  align-items: center
+  gap: rem(14)
+  position: relative
+  text-decoration: none
+  
+  &:after
+    position: absolute
+    content: ''
+    width: rem(20)
+    height: rem(20)
+    right: 0
+    -webkit-mask: url('/icons/angle.svg') no-repeat center
+    -webkit-mask-size: contain
+    mask: url('/icons/angle.svg') no-repeat center
+    mask-size: contain
+    background-color: #D9D9D9
+
+  &__icon
+    width: rem(36)
+    height: rem(36)
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    img
+      width: 100%
+
+  &__label
+    color: #fff
+    font-weight: 700
+    padding-right: rem(15)

@@ -1,0 +1,35 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.header
+  padding: rem(16) 0
+
+  &__flex-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+  
+  &__controls 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: rem(12)
+
+  &__controls-item
+    color: $primary
+    position: relative
+    a
+      color: $primary
+
+  &__item-count
+    height: rem(15)
+    min-width: rem(15)
+    font-size: rem(10)
+    font-weight: 500
+    border-radius: rem(10)
+    text-align: center
+    background-color: #FF0101   
+    position: absolute
+    top: rem(2)
+    left: 50%
+    padding: rem(2)

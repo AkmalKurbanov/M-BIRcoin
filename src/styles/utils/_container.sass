@@ -1,0 +1,10 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.container
+  max-width: rem(960)
+  margin: 0 auto
+  padding: 0 rem(16)
+
+  &--tree
+    height: calc( 100% - rem(85) )

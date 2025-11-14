@@ -1,0 +1,6 @@
+include ../mixins/menu-item
+.menu 
+  ul.menu__container
+    each item, i in menu
+      li(class=(i === 0 ? 'is-active' : false))
+        +menuItem({ icon: item.icon, label: item.label, link: item.link, active: item.active })

@@ -1,0 +1,15 @@
+mixin linkLogo({ icon, label, link, email, phone, whatsapp })
+  -
+    let href = '';
+    if (link) href = link;
+    else if (email) href = `mailto:${email}`;
+    else if (phone) href = `tel:${phone}`;
+    else if (whatsapp) href = `https://wa.me/${whatsapp}`;
+
+  if (href)
+    a.link-logo(href=href target="_blank")
+      if icon
+        .link-logo__icon
+          img(src=icon, alt=label)
+      if label
+        .link-logo__label= label

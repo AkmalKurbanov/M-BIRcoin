@@ -1,0 +1,30 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.profile
+  &__avatar
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .card
+      position: relative
+      .profile-edit 
+        position: absolute
+        right: 0
+        bottom: 0
+        border: rem(1) solid $primary
+        width: rem(30)
+        height: rem(30)
+        background-color: $primary
+        color: #000 
+        display: flex
+        align-items: center
+        justify-content: center
+
+        input
+          opacity: 0
+          inset: 0
+          width: 100%
+          height: 100%
+          position: absolute

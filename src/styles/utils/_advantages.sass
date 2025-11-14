@@ -1,0 +1,10 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/rem'  as *
+
+.advantages
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  gap: rem(16)
+  &__item
+    width: calc( 50% - rem(8) )

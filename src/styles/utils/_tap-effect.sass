@@ -1,0 +1,9 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.tap-effect
+  transition: $transition
+  @media (hover: none) and (pointer: coarse)
+    &:active
+      opacity: 0.8
+      transform: translateY(-5px)

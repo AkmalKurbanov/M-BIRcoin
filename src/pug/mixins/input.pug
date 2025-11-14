@@ -1,0 +1,46 @@
+mixin input({ label, placeholder, value = '', copy = false, file = false, name, id, error, success })
+  .input
+    if label
+      label.input__label(for=id)= label
+
+    if copy
+      .input__flex-container
+        .input__field.glass-effect(class=(error ? 'is-error' : success ? 'is-success' : ''))
+          input.copied-js(
+            type='text'
+            id=id
+            name=name
+            placeholder=placeholder
+            value=value
+          )
+          .input__message= error || success || ''
+        button.input__copy.copy-value-js.glass-effect.tap-effect(type='button')
+          +icon('copy', { class: 'icon', width: 18, height: 18 })
+          +icon('check', { class: 'icon', width: 18, height: 18 })
+    else if file
+      .input__field.input__field--file.glass-effect(class=(error ? 'is-error' : success ? 'is-success' : ''))
+        input(
+          type='file'
+          id=id
+          name=name
+        )
+        .input__file
+          .input__file-btn.glass-effect Выберите файл
+          .input__file-name Файл не выбран
+
+    else
+      .input__field.glass-effect(class=(error ? 'is-error' : success ? 'is-success' : ''))
+        input(
+          type='text'
+          id=id
+          name=name
+          placeholder=placeholder
+          value=value
+          
+        )
+        .input__message= error || success || ''
+
+
+//- +input('Имя', 'Введите имя', '', false, 'name', 'input-name')
+//- +input('Ссылка', 'URL', 'https://site.com', true, 'link', 'input-link')
+//- +input('Телефон', 'Введите номер', '', false, 'phone', 'input-phone', 'Некорректный номер')

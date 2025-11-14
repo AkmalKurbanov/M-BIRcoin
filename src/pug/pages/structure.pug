@@ -1,0 +1,22 @@
+extends ../layouts/base
+include ../mixins/card
+include ../mixins/card-content
+include ../mixins/button
+include ../mixins/input
+include ../mixins/tree-item 
+
+block title 
+  | Структура
+block content
+  .container.container--tree
+    +title({ title: 'Акционеры экосистемы', tag: 'h2', size: 'lg' })
+    
+    form#tree-search
+      +input({
+        placeholder: "Поиск",
+        id: "search"
+      })
+
+    
+    #tree-container
+    

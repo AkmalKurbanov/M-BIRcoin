@@ -1,0 +1,32 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.status
+  display: inline-flex
+  align-items: center
+  gap: rem(4)
+  font-size: rem(12)
+  line-height: rem(18)
+  font-weight: 500
+  text-transform: uppercase
+  color: #fff
+  border-radius: rem(8)
+  padding: rem(3) rem(8)
+
+  span
+    text-transform: none
+
+  &--orange
+    background-color: $primary
+  
+  &--blue
+    background-color: $blue
+
+  &--purple
+    background-color: $purple
+
+  &--green
+    background-color: $green
+
+  &--red
+    background-color: $red

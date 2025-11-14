@@ -1,0 +1,55 @@
+extends ../layouts/base
+include ../mixins/card
+include ../mixins/card-content
+
+block content
+  .container
+    section.section
+      +title({ title: 'Команда правления', tag: 'h2', size: 'lg' })
+      .slider
+        .swiper.team-js 
+          .swiper-wrapper
+            each item in team
+              .swiper-slide
+                +card({
+                  img: 'card',
+                  label: item,
+                  link: "/images/card/card-330.avif",
+                  category: "team"
+                })
+
+    section.section
+      +title({ title: 'Совет', tag: 'h2', size: 'lg' })
+      .slider
+        .swiper.board-js 
+          .swiper-wrapper
+            each item in team
+              .swiper-slide
+                +card({
+                  img: 'card',
+                  label: item,
+                  link: "/images/card/card-330.avif",
+                  category: "board"
+                })
+    section.section
+      +title({ title: 'Учредительные документы', tag: 'h2', size: 'lg' })
+      .slider
+        .swiper.documents-js 
+          .swiper-wrapper
+            each item in docs
+              .swiper-slide
+                +card({
+                  img: 'card2',
+                  label: item.label,
+                  link: "/images/card/card2-330.avif",
+                  category: "documents"
+                })
+
+    section.section
+      .advantages
+        each item in advantages
+          .advantages__item
+            +cardContent({
+              label: item.label,
+              count: item.count
+            })

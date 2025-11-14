@@ -1,0 +1,147 @@
+extends ../layouts/base
+include ../mixins/input
+include ../mixins/check
+include ../mixins/title
+include ../mixins/card
+
+block content
+  .profile
+    .container
+      section.section
+        .profile__avatar
+          +card({
+            img: 'card',
+            profile: true            
+          })
+
+      section.section
+        .section-passport
+          .passport
+            .passport__title Паспорт
+
+            .passport__uploads
+              label.upload-card.glass-effect
+                input.upload-input(type="file" accept="image/*" hidden)
+                .upload-card__img-wrap
+                  .upload-card__img-default
+                    img(src="./icons/pass1.svg", alt="alt")
+                  .upload-card__preview 
+                .upload-card__text Загрузите лицевую сторону паспорта
+                .upload-remove
+                  +icon('cross', {class: 'icon ', width: 10, height: 10})
+
+              label.upload-card.glass-effect
+                input.upload-input(type="file" accept="image/*" hidden)
+                .upload-card__img-wrap
+                  .upload-card__img-default
+                    img(src="./icons/pass2.svg", alt="alt")
+                  .upload-card__preview 
+                .upload-card__text Загрузите обратную сторону паспорта
+                .upload-remove
+                  +icon('cross', {class: 'icon ', width: 10, height: 10})
+            
+      section.section
+        .input-wrap 
+          form
+            .input-wrapper
+              +input({
+                label: "Адрес криптокошелька (BIR)",
+                value: "0xF069Ea2921C9732a4F1D4730Dba7CedEeeF53d44",
+                id: "BIR",
+                copy: true
+              })
+
+              +input({
+                label: "Адрес криптокошелька (BEP20)",
+                value: "0xF069Ea2921C9732a4F1D4730Dba7CedEeeF53d44",
+                id: "BEP20",
+                copy: true
+              })
+
+              +input({
+                label: "Телефон",
+                placeholder: "Введите номер телефона",
+                value: "+996555208090",
+                id: "phone" 
+              })
+
+              +input({
+                label: "Почта",
+                placeholder: "Введите email",
+                value: "kubanychbek@gmail.com",
+                id: "email" 
+              })  
+
+              +input({
+                label: "Город/село",
+                placeholder: "Введите адрес",
+                value: "Бишкек",
+                id: "city" 
+              })   
+
+              +input({
+                label: "Образование",
+                placeholder: "Введите ваше образование",
+                value: "Высшее, КНУ, Экономист, Банковское дело",
+                id: "education" 
+              })
+
+              +input({
+                label: "Количество акций",
+                value: "200 000",
+                id: "shares" 
+              })
+
+              +input({
+                label: "Прикрепите чек оплаты",
+                placeholder: "Введите ваше образование",
+                id: "payment-receipt" ,
+                file: true
+              })
+
+      section.section
+        .certificate
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/certificate/certificate-338.avif 338w,
+                      ./images/certificate/certificate-676.avif 676w,
+                      ./images/certificate/certificate-1014.avif 1014w`
+              sizes="338px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/certificate/certificate-338.webp 338w,
+                      ./images/certificate/certificate-676.webp 676w,
+                      ./images/certificate/certificate-1014.webp 1014w`
+              sizes="338px"
+            )
+            img(
+              src="./images/certificate/certificate-676.jpg"
+              srcset=`./images/certificate/certificate-338.jpg 338w,
+                      ./images/certificate/certificate-676.jpg 676w,
+                      ./images/certificate/certificate-1014.jpg 1014w`
+              sizes="338px"
+              width="338"
+              height="auto"
+              alt="M-BIRcoin certificate"
+            )
+
+      section.section
+      .history
+        +title({ title: 'История оплаты', tag: 'h2', size: 'xs' })
+        .history__item
+          +check({
+              label: "Чек оплаты №00003",
+              link: "./images/receipt-960.webp",
+            })
+        .history__item
+          +check({
+              label: "Чек оплаты №00002",
+              link: "./images/receipt-960.webp",
+            })
+        .history__item
+          +check({
+              label: "Чек оплаты №00001",
+              link: "./images/receipt-960.webp",
+            })

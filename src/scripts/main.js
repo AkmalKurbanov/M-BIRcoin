@@ -1,0 +1,10 @@
+import  "./modules/fancybox.js";
+import  "./modules/input-copy.js";
+import  "./modules/input-file.js";
+import  "./modules/slider.js";
+import  "./modules/notification.js";
+import  "./modules/passport.js";
+import  "./modules/progress-bar.js";
+import  "./modules/glass-effect.js";
+import  "./modules/chart.js";
+import  "./modules/tree.js";

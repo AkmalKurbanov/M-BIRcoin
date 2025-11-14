@@ -1,0 +1,66 @@
+mixin card({img, label, link, category, profile})
+  .card 
+    if(link)
+      a(data-src=link data-fancybox=category)
+        .card__img 
+          span
+            picture
+              source(
+                type="image/avif"
+                srcset=`./images/card/${img}-110.avif 110w,
+                        ./images/card/${img}-220.avif 220w,
+                        ./images/card/${img}-330.avif 330w`
+                sizes="110px"
+              )
+              source(
+                type="image/webp"
+                srcset=`./images/card/${img}-110.webp 110w,
+                        ./images/card/${img}-220.webp 220w,
+                        ./images/card/${img}-330.webp 330w`
+                sizes="110px"
+              )
+              img(
+                src=`./images/card/${img}-220.png`
+                srcset=`./images/card/${img}-110.png 110w,
+                        ./images/card/${img}-220.png 220w,
+                        ./images/card/${img}-330.png 330w`
+                sizes="110px"
+                width="110"
+                height="auto"
+                alt=img
+              ) 
+          
+        .card__label=label
+    else  
+      .card__img 
+        span
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/card/${img}-110.avif 110w,
+                      ./images/card/${img}-220.avif 220w,
+                      ./images/card/${img}-330.avif 330w`
+              sizes="110px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/card/${img}-110.webp 110w,
+                      ./images/card/${img}-220.webp 220w,
+                      ./images/card/${img}-330.webp 330w`
+              sizes="110px"
+            )
+            img(
+              src=`./images/card/${img}-220.png`
+              srcset=`./images/card/${img}-110.png 110w,
+                      ./images/card/${img}-220.png 220w,
+                      ./images/card/${img}-330.png 330w`
+              sizes="110px"
+              width="110"
+              height="auto"
+              alt=img
+            ) 
+        if(profile)
+          .profile-edit 
+            input(type="file")  
+            +icon('pencil', {class: 'icon', width: 20, height: 20})
+      .card__label=label

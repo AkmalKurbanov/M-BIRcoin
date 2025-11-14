@@ -1,0 +1,26 @@
+a(href="index.html").logo
+  picture
+    source(
+      type="image/avif"
+      srcset=`./images/logo/logo-151.avif 151w,
+              ./images/logo/logo-302.avif 302w,
+              ./images/logo/logo-453.avif 453w`
+      sizes="151px"
+    )
+    source(
+      type="image/webp"
+      srcset=`./images/logo/logo-151.webp 151w,
+              ./images/logo/logo-302.webp 302w,
+              ./images/logo/logo-453.webp 453w`
+      sizes="151px"
+    )
+    img(
+      src="./images/logo/logo-302.png"
+      srcset=`./images/logo/logo-151.png 151w,
+              ./images/logo/logo-302.png 302w,
+              ./images/logo/logo-453.png 453w`
+      sizes="151px"
+      width="151"
+      height="auto"
+      alt="M-BIRcoin logo"
+    )

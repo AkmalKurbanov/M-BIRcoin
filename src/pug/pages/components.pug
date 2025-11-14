@@ -1,0 +1,96 @@
+extends ../layouts/base
+include ../mixins/icon
+include ../mixins/title
+include ../mixins/input
+include ../mixins/button
+include ../mixins/card
+include ../mixins/card-content
+include ../mixins/menu-item
+include ../mixins/link-logo
+include ../mixins/check
+include ../mixins/notification
+
+block content
+  each item in notification
+    +notification({
+      img: item.img,
+      date: item.date,
+      label: item.label,
+      desc: item.desc,
+    })
+  +check({
+    label: "Чек оплаты №00003",
+    link: "",
+  })
+  include ../components/logo
+  +icon('blank', {class: 'icon ', width: 20, height: 20})
+  +icon('copy', {class: 'icon ', width: 20, height: 20})
+  +icon('cross', {class: 'icon ', width: 20, height: 20})
+  +icon('doc', {class: 'icon ', width: 20, height: 20})
+  +icon('home', {class: 'icon ', width: 20, height: 20})
+  +icon('link', {class: 'icon ', width: 20, height: 20})
+  +icon('ring', {class: 'icon ', width: 20, height: 20})
+  +icon('star', {class: 'icon ', width: 20, height: 20})
+  +icon('support', {class: 'icon ', width: 20, height: 20})
+  +icon('tree', {class: 'icon ', width: 20, height: 20})
+  +icon('user', {class: 'icon ', width: 20, height: 20})
+  +icon('web', {class: 'icon ', width: 20, height: 20})
+  
+  +title({ title: 'Главная' })
+  +title({ title: 'Контакты', size: 'sm' })
+  +title({ title: 'Отзывы', tag: 'h3', size: 'xl' })
+
+  
+  +input({
+    label: 'ФИО',
+    placeholder: 'Введите ФИО',
+    name: 'name',
+    id: 'input-name'
+    })
+
+  +input({
+    label: 'Ссылка',
+    placeholder: 'URL',
+    value: 'https://site.com',
+    copy: true,
+    name: 'link',
+    id: 'input-link'
+    })
+
+  +input({
+    label: 'Прикрепите чек оплаты',
+    placeholder: 'URL',
+    value: 'https://site.com222',
+    file: true,
+    name: 'receipt',
+    id: 'input-receipt'
+    })
+
+  +input({
+    label: 'Телефон',
+    placeholder: 'Введите номер',
+    name: 'phone',
+    id: 'input-phone',
+    error: 'Некорректный номер'
+    })
+
+  +btn('Зарегистрироваться')
+
+  each item in team
+    +card({
+      img: 'card',
+      label: item,
+      link: false
+    })
+    
+  each item in advantages
+    +cardContent({
+      label: item.label,
+      count: item.count
+    })
+
+  each item in contacts
+    +linkLogo({
+      icon:  item.icon,
+      label: item.label,
+    })

@@ -1,0 +1,65 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+html,
+body,
+.wrapper
+  height: 100%
+
+.wrapper
+  position: relative
+  padding-bottom: rem(100)
+  background: linear-gradient(180deg, #002527 0%, #000000 100%)
+  background: linear-gradient(
+    180deg,
+    color(display-p3 0 0.145 0.152) 0%,
+    color(display-p3 0 0 0) 100%
+  )
+  overflow-x: hidden
+
+  &::before
+    position: fixed
+    content: ''
+    width: rem(781)
+    height: rem(781)
+    border-radius: 50%
+    left: 50%
+    transform: translateX(-50%)
+    background: radial-gradient(37.34% 41.34% at 50% 50%, #107B81 0%, rgba(17, 17, 17, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    opacity: 0.3
+    pointer-events: none
+
+.logo
+  max-width: rem(151)
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  img
+    width: 100%
+
+picture
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+
+.section
+  margin-bottom: rem(24)
+  &:last-child
+    margin-bottom: 0
+
+.certificate
+  position: relative
+  border-radius: rem(16)
+  border: rem(1) solid $primary
+  overflow: hidden
+  img
+    width: 100%
+
+
+.registration
+  &__wrap
+    height: calc( 100vh - rem(113))
+    padding-bottom: rem(150)
+    overflow-y: scroll

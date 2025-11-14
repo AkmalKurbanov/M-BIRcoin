@@ -1,0 +1,9 @@
+mixin menuItem({icon,label,link})
+  if(link)
+    a(href=link).menu-item.tap-effect
+      +icon(icon, {class: 'icon ', width: 32, height: 32})
+      .menu-item__label=label
+  else
+    .menu-item.tap-effect     
+      +icon(icon, {class: 'icon ', width: 32, height: 32})
+      .menu-item__label=label

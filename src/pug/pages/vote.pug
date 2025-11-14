@@ -1,0 +1,313 @@
+extends ../layouts/base
+include ../mixins/card
+include ../mixins/card-content
+include ../mixins/button
+include ../mixins/input
+
+
+block title 
+  | Голосование
+block content
+  .container
+    +title({ title: 'Голосование', tag: 'h2', size: 'lg' })
+    .card-item.glass-effect
+      .card-item__content
+        .card-item__img 
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/notification/notification-338.avif 338w,
+                      ./images/notification/notification-676.avif 676w,
+                      ./images/notification/notification-1014.avif 1014w`
+              sizes="338px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/notification/notification-338.webp 338w,
+                      ./images/notification/notification-676.webp 676w,
+                      ./images/notification/notification-1014.webp 1014w`
+              sizes="338px"
+            )
+            img(
+              src="./images/notification/notification-676.jpg"
+              srcset=`./images/notification/notification-338.jpg 338w,
+                      ./images/notification/notification-676.jpg 676w,
+                      ./images/notification/notification-1014.jpg 1014w`
+              sizes="338px"
+              width="338"
+              height="auto"
+              alt="notification"
+            )
+
+
+        .card-item__info
+          .card-item__status-wrap
+            .card-item__status 
+              .status.status--orange
+                +icon('loading', {class: 'icon', width: 16, height: 16}) 
+                p Идёт набор участников
+            .card-item__status 
+              .status.status--blue
+                +icon('signal', {class: 'icon', width: 16, height: 16}) 
+                p ИДЁТ ГОЛОСОВАНИЕ - 13:00–14:00, 29.10.2025 г. 
+            .card-item__status 
+              .status.status--purple
+                +icon('clock', {class: 'icon', width: 16, height: 16}) 
+                p Осталось: 00:23:47 
+            .card-item__status 
+              .status.status--green
+                +icon('check-double', {class: 'icon', width: 16, height: 16}) 
+                p РЕЗУЛЬТАТ: ПРИНЯТО
+            .card-item__status 
+              .status.status--purple
+                +icon('calendar', {class: 'icon', width: 16, height: 16}) 
+                p  13:00–14:00, 29.10.2025 г. 
+            .card-item__status 
+              .status.status--red
+                +icon('cross', {class: 'icon', width: 16, height: 16}) 
+                p РЕЗУЛЬТАТ: ОТКЛОНЕНО
+          +title({ title: 'Название темы голосования', tag: 'h3', size: 'md' })
+
+          .card-item__desc
+            p Чтобы начать голосование, нужно 16 000 участников. Присоединяйтесь, чтобы выразить свою позицию
+
+          .card-item__result 
+            .card-item__label
+              p Участников собрано: 
+              span 12 420 из 16 000
+            .progress-bar(data-current="12 420" data-total="16 000")
+              .progress-bar__line
+
+          +btn({
+            label:"",
+            link:"",
+            className: ""
+            })   
+    br
+    .card-item.glass-effect
+      .card-item__content
+        .card-item__img 
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/notification/notification-338.avif 338w,
+                      ./images/notification/notification-676.avif 676w,
+                      ./images/notification/notification-1014.avif 1014w`
+              sizes="338px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/notification/notification-338.webp 338w,
+                      ./images/notification/notification-676.webp 676w,
+                      ./images/notification/notification-1014.webp 1014w`
+              sizes="338px"
+            )
+            img(
+              src="./images/notification/notification-676.jpg"
+              srcset=`./images/notification/notification-338.jpg 338w,
+                      ./images/notification/notification-676.jpg 676w,
+                      ./images/notification/notification-1014.jpg 1014w`
+              sizes="338px"
+              width="338"
+              height="auto"
+              alt="notification"
+            )
+
+
+        .card-item__info
+          .card-item__status-wrap
+            .card-item__status 
+              .status.status--orange
+                +icon('loading', {class: 'icon', width: 16, height: 16}) 
+                p Идёт набор участников
+           
+          +title({ title: 'Название темы голосования', tag: 'h3', size: 'md' })
+
+          .card-item__desc
+            p Чтобы начать голосование, нужно 16 000 участников. Присоединяйтесь, чтобы выразить свою позицию
+
+          .card-item__result 
+            .card-item__label
+              p Участников собрано: 
+              span 12 420 из 16 000
+            .progress-bar(data-current="12 420" data-total="16 000")
+              .progress-bar__line
+
+          +btn({
+            label:"Учавствовать",
+            className: "primary"
+            })   
+          br
+          +btn({
+            label:"Вы участвуете",
+            icon:"check-o",
+            className: "success"
+            })   
+    br
+    .card-item.glass-effect
+      .card-item__content
+        .card-item__img 
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/notification/notification-338.avif 338w,
+                      ./images/notification/notification-676.avif 676w,
+                      ./images/notification/notification-1014.avif 1014w`
+              sizes="338px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/notification/notification-338.webp 338w,
+                      ./images/notification/notification-676.webp 676w,
+                      ./images/notification/notification-1014.webp 1014w`
+              sizes="338px"
+            )
+            img(
+              src="./images/notification/notification-676.jpg"
+              srcset=`./images/notification/notification-338.jpg 338w,
+                      ./images/notification/notification-676.jpg 676w,
+                      ./images/notification/notification-1014.jpg 1014w`
+              sizes="338px"
+              width="338"
+              height="auto"
+              alt="notification"
+            )
+
+
+        .card-item__info
+          .card-item__status-wrap
+            .card-item__status 
+              .status.status--blue
+                +icon('signal', {class: 'icon', width: 16, height: 16}) 
+                p ИДЁТ ГОЛОСОВАНИЕ - 13:00–14:00, 29.10.2025 г. 
+            .card-item__status 
+              .status.status--blue
+                +icon('signal', {class: 'icon', width: 16, height: 16}) 
+                p Ваш голос учтён
+            .card-item__status 
+              .status.status--purple
+                +icon('clock', {class: 'icon', width: 16, height: 16}) 
+                p Осталось: 00:23:47 
+           
+          +title({ title: 'Название темы голосования', tag: 'h3', size: 'md' })
+
+          .card-item__desc
+            p Платформа предлагает изменить правила начисления бонусов. Вы можете выразить своё мнение
+          .card-item__result 
+            .card-item__label
+              p Участников собрано: 
+              span 16 000
+            .card-item__label
+              p Уже проголосовало:
+              span 9 450
+            .progress-bar(data-current="9 450" data-total="16 000")
+              .progress-bar__line
+
+          .card-item__btn-wrap
+            +btn({
+              label:"Поддерживаю",
+              className: "success"
+              })   
+            +btn({
+              label:"Против",
+              className: "error"
+              })   
+            +btn({
+              label:"Воздержусь",
+              className: "warning"
+              })   
+          br    
+          .card-item__btn-wrap
+            +btn({
+              label:"Поддерживаю",
+              className: "success",
+              state: "disabled"
+              })   
+            +btn({
+              label:"Против",
+              className: "error",
+              state: "disabled"
+              })   
+            +btn({
+              label:"Воздержусь",
+              className: "warning",
+              state: "disabled"
+              })   
+    br
+    .card-item.glass-effect
+      .card-item__content
+        .card-item__img 
+          picture
+            source(
+              type="image/avif"
+              srcset=`./images/notification/notification-338.avif 338w,
+                      ./images/notification/notification-676.avif 676w,
+                      ./images/notification/notification-1014.avif 1014w`
+              sizes="338px"
+            )
+            source(
+              type="image/webp"
+              srcset=`./images/notification/notification-338.webp 338w,
+                      ./images/notification/notification-676.webp 676w,
+                      ./images/notification/notification-1014.webp 1014w`
+              sizes="338px"
+            )
+            img(
+              src="./images/notification/notification-676.jpg"
+              srcset=`./images/notification/notification-338.jpg 338w,
+                      ./images/notification/notification-676.jpg 676w,
+                      ./images/notification/notification-1014.jpg 1014w`
+              sizes="338px"
+              width="338"
+              height="auto"
+              alt="notification"
+            )
+
+
+        .card-item__info
+          .card-item__status-wrap
+            .card-item__status 
+              .status.status--blue
+                +icon('signal', {class: 'icon', width: 16, height: 16}) 
+                p ИДЁТ ГОЛОСОВАНИЕ - 13:00–14:00, 29.10.2025 г. 
+            .card-item__status 
+              .status.status--blue
+                +icon('signal', {class: 'icon', width: 16, height: 16}) 
+                p Ваш голос учтён
+            .card-item__status 
+              .status.status--purple
+                +icon('clock', {class: 'icon', width: 16, height: 16}) 
+                p Осталось: 00:23:47 
+           
+          +title({ title: 'Название темы голосования', tag: 'h3', size: 'md' })
+
+          .card-item__desc
+            p На основании большинства голосов решение ПРИНЯТО.
+          
+          .card-item__result
+            a.card-item__list-participants.trigger-js(href="#" target="_blank" data-name="participants") Посмотреть список участников
+              +icon('link', {class: 'icon ', width: 12, height: 12})
+
+            .card-item__result-chart(data-total="16000")
+              .card-item__chart-column
+                .card-item__chart
+                  svg.vote-chart(width="200" height="200" viewBox="0 0 200 200")
+                    circle.chart-bg(cx="100" cy="100" r="80")
+                    circle.chart-segment.supported(data-value="10000" cx="100" cy="100" r="80")
+                    circle.chart-segment.against(data-value="5000" cx="100" cy="100" r="80")
+                    circle.chart-segment.abstained(data-value="1000" cx="100" cy="100" r="80")
+                  .chart-label Всего голосов
+                    span 16 000
+
+                  
+              .card-item__chart-column 
+                ul 
+                  li.supported Поддержали:
+                    span 
+                  li.against Против:
+                    span 
+                  li.abstained Воздержались:
+                    span 
+
+    include ../components/participants
+          

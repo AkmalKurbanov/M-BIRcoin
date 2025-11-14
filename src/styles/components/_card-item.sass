@@ -1,0 +1,206 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.notification
+  position: absolute
+
+  &__item
+    margin-bottom: rem(12)
+    &:last-child
+      margin-bottom: 0
+
+.card-item
+  position: relative
+
+  &__content
+    position: relative
+    z-index: 1
+
+    .title
+      margin-bottom: 0
+
+  &__img
+    border-radius: rem(16)
+    overflow: hidden
+
+    img
+      width: 100%
+      max-width: 100%
+
+  &__info
+    padding: rem(12)
+
+  &__date
+    font-size: rem(14)
+    line-height: rem(16)
+    color: #8c8c8c
+    margin-bottom: rem(4)
+
+  &__desc
+    font-size: rem(14)
+    line-height: rem(16)
+    font-weight: 400
+    color: #fff
+    margin-top: rem(4)
+
+  &__status-wrap
+    margin-bottom: rem(12)
+
+  &__status
+    margin-bottom: rem(8)
+    &:last-child
+      margin-bottom: 0
+
+  &__result
+    border-top: rem(1) solid #D9D9D9
+    margin-top: rem(12)
+    padding-top: rem(12)
+    margin-bottom: rem(16)
+
+  &__label
+    display: flex
+    gap: rem(5)
+    font-size: rem(14)
+    font-weight: 400
+    color: #fff
+    margin-bottom: rem(11)
+
+  &__btn-wrap
+    display: flex
+    justify-content: space-between
+    gap: rem(8)
+    span
+      font-size: rem(14)
+
+  &__list-participants
+    font-size: rem(14)
+    color: #3B82F6
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    gap: rem(4)
+
+  &__result-chart
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: rem(8)
+    margin-top: rem(16)
+
+  &__chart
+    width: rem(145)
+    height: rem(145)
+    position: relative
+
+    svg
+      transform: rotate(-90deg)
+      width: 100%
+      height: 100%
+
+    .chart-bg
+      fill: none
+      stroke: rgba(255,255,255,0.1)
+      stroke-width: 20
+
+    .chart-segment
+      fill: none
+      stroke-width: 20
+      stroke-linecap: butt
+      transition: stroke-dashoffset 1s ease
+
+      &.supported
+        stroke: #00c851
+      &.against
+        stroke: #ff4444
+      &.abstained
+        stroke: #ffbb33
+
+    .chart-label
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      text-align: center
+      color: #fff 
+      font-size: rem(12)
+      font-weight: 500
+      width: 100%
+
+      span
+        display: block
+        font-size: rem(18)
+        font-weight: 500
+        margin-top: rem(5)
+
+    strong
+      display: block
+      font-size: 24px
+      font-weight: 700
+
+  &__chart-column
+    ul
+      padding: 0
+      li
+        position: relative
+        padding-left: rem(19)
+        font-size: rem(11)
+        color: #fff
+        margin-bottom: rem(19)
+        list-style: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: rem(8)
+
+        &:last-child
+          margin-bottom: 0
+
+        span
+          font-weight: 500
+
+        &::before
+          position: absolute
+          content: ''
+          width: rem(11)
+          height: rem(11)
+          border-radius: 50%
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+
+        &.supported
+          &::before
+            background-color: $green
+        &.against
+          &::before
+            background-color: $red
+        &.abstained
+          &::before
+            background-color: $primary
+
+.progress-bar
+  position: relative
+  width: 100%
+  height: rem(17.78)
+  background-color: #fff
+  border-radius: rem(24)
+  overflow: hidden
+  box-shadow: inset 0 0 0 rem(1) #EFEFEF
+  background-image: url('../icons/progress-bar.svg')
+  background-repeat: repeat-x
+  background-size: contain
+  background-position: right
+
+  &__line
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100%
+    background-color: $primary
+    border-radius: rem(24)
+    transition: $transition
+    font-size: rem(14)
+    font-weight: 500
+    color: #fff
+    white-space: nowrap

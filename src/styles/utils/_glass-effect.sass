@@ -1,0 +1,75 @@
+@use '../abstracts/_tokens' as *
+@use '../mixins/_rem' as *
+
+.glass-effect
+  background: rgba(255, 255, 255, 0.008) 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 60px 30px rgba(255, 255, 255, 3)
+  backdrop-filter: blur(5px) saturate(1.2)
+  border-radius: $radius
+  position: relative
+  overflow: hidden
+  
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 1px
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.8), transparent)
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 1px
+    height: 100%
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3))
+  
+  &__element
+    &:first-child
+      position: absolute
+      inset: 0
+      border-radius: $radius
+      padding: 1px
+      background: linear-gradient(180deg,rgba(57, 57, 57, 0.21) 1%,rgba(151, 151, 151, 0.35) 100%)
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+      mask-composite: exclude
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+      -webkit-mask-composite: xor
+      pointer-events: none
+
+    &:nth-child(2)
+      position: absolute
+      top: 0px
+      left: 10%
+      right: 10%
+      height: 1px
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.11), transparent)
+
+    &:nth-child(3)
+      position: absolute
+      top: 10%
+      left: 0px
+      width: 1px
+      height: 80%
+      background: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035), transparent)
+
+    &:nth-child(4)
+      position: absolute
+      top: 1px
+      right: 0
+      bottom: 1px
+      left: 1px
+      border-radius: $radius
+      box-shadow: inset 0 0 2px 0 rgba(255, 255, 255, 0.15), inset 0 2px 4px 0 rgba(255, 255, 255, 0.08), inset 0 -2px 2px 0 rgba(255, 255, 255, 0.12)
+      pointer-events: none
+
+    &:nth-child(5)
+      position: absolute
+      inset: 2px
+      border-radius: $radius
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.21) 0%, transparent 70%)
+      mix-blend-mode: overlay
+      pointer-events: none

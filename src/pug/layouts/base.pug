@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title 
+      block title
+    link(rel="stylesheet" href="/css/main.css")
+  body
+    .wrapper
+      include ../mixins/title
+      include ../mixins/icon
+      include ../components/header-controls
+      block content
+      include ../components/menu
+  script(type="module" src="/js/main.js")
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+

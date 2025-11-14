@@ -1,0 +1,41 @@
+@use '../abstracts/_tokens' as * 
+@use '../mixins/_rem' as *
+
+.table
+  border-collapse: collapse
+  width: 100%
+  margin-top: rem(12)
+  
+  th
+    color: $primary
+    font-size: rem(14)
+    font-weight: 600
+    border-bottom: rem(1) solid #D9D9D9
+    text-align: left
+
+
+  td
+    font-size: rem(13)
+    font-weight: 400
+    color: #fff
+    padding-left: rem(5)
+    padding-right: rem(5)
+
+    &:first-child
+      color: $primary
+      padding-right: rem(5)
+      padding-left: 0
+
+  th,
+  td
+    padding: rem(4) rem(5)
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      text-align: right
+      padding-right: 0
+
+
+  
